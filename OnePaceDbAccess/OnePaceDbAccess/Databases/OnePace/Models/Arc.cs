@@ -58,5 +58,10 @@ namespace OnePaceDbAccess.Databases.OnePace.Models
                 return $"<script type=\"text/javascript\">generatePost('{TorrentHash}', '');</script>";
             }
         }
+
+        public static string GetName(string chapters, string title, string resolution)
+        {
+            return "[One Pace]" + (string.IsNullOrWhiteSpace(chapters) ? "" : "[" + chapters + "]") + " " + title + " [" + resolution + "]";
+        }
     }
 }
