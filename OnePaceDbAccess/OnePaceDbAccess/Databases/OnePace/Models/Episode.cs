@@ -37,6 +37,15 @@ namespace OnePaceDbAccess.Databases.OnePace.Models
         public string RelativeFilePath { get; set; }
         [Column("source_path")]
         public string SourcePath { get; set; }
+
+        public Episode()
+        {
+            RelativeFilePath = "";
+            Status = "";
+            SourcePath = "";
+            Title = "";
+        }
+
         public int ResolutionIndex
         {
             get
