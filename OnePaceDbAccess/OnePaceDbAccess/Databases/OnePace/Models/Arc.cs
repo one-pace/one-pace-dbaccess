@@ -59,9 +59,15 @@ namespace OnePaceDbAccess.Databases.OnePace.Models
             }
         }
 
+        public string GetName(bool includeResolution)
+        {
+            return GetName(Chapters, Title, includeResolution ? Resolution : null);
+        }
+
         public static string GetName(string chapters, string title, string resolution)
         {
-            return "[One Pace]" + (string.IsNullOrWhiteSpace(chapters) ? "" : "[" + chapters + "]") + " " + title + " [" + resolution + "]";
+            string res = string.IsNullOrWhiteSpace(resolution) ? "" : $" [{resolution}]";
+            return "[One Pace]" + (string.IsNullOrWhiteSpace(chapters) ? "" : "[" + chapters + "]") + " " + title + res;
         }
     }
 }
