@@ -33,16 +33,10 @@ namespace OnePaceDbAccess.Databases.OnePace.Models
         public int? Part { get; set; }
         [Column("hidden")]
         public bool Hidden { get; set; }
-        [Column("relative_file_path")]
-        public string RelativeFilePath { get; set; }
-        [Column("source_path")]
-        public string SourcePath { get; set; }
 
         public Episode()
         {
-            RelativeFilePath = "";
             Status = "";
-            SourcePath = "";
             Title = "";
         }
 
