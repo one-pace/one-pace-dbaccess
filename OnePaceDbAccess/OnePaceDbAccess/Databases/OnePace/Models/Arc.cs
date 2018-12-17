@@ -26,24 +26,6 @@ namespace OnePaceDbAccess.Databases.OnePace.Models
         [Column("released")]
         public bool Released { get; set; }
 
-        public int ResolutionIndex
-        {
-            get
-            {
-                if (Resolution == "720p")
-                {
-                    return 2;
-                }
-                else if (Resolution == "480p")
-                {
-                    return 1;
-                }
-                else
-                {
-                    return 0;
-                }
-            }
-        }
         public void Validate()
         {
             if (string.IsNullOrWhiteSpace(Title))
