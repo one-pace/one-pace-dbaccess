@@ -27,8 +27,6 @@ namespace OnePaceDbAccess.Databases.OnePace.Models
         public DateTime? ReleasedDate { get; set; }
         [Column("title")]
         public string Title { get; set; }
-        [Column("status")]
-        public string Status { get; set; }
         [Column("part")]
         public int? Part { get; set; }
         [Column("hidden")]
@@ -36,7 +34,6 @@ namespace OnePaceDbAccess.Databases.OnePace.Models
 
         public Episode()
         {
-            Status = "";
             Title = "";
         }
 

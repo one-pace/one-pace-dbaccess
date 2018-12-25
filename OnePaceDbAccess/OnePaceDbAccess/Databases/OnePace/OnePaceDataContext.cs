@@ -10,7 +10,6 @@ namespace OnePaceDbAccess.Databases.OnePace
         public DbSet<Saga> Sagas { get; set; }
         public DbSet<Arc> Arcs { get; set; }
         public DbSet<Episode> Episodes { get; set; }
-        public DbSet<QCSubmission> QCSubmissions { get; set; }
 
         public OnePaceDataContext()
         {
@@ -28,17 +27,6 @@ namespace OnePaceDbAccess.Databases.OnePace
                 p => p.Id,
                 c => c.ArcId,
                 (arc, episodes) => new ArcEpisodes { Arc = arc, Episodes = episodes }
-            ).AsQueryable();
-        }
-
-        public IQueryable<QCSubmissionArcEpisode> FetchQCSubmissions()
-        {
-            return (
-                from qcSubmission in QCSubmissions
-                join episode in Episodes on qcSubmission.EpisodeId equals episode.Id
-                join arc in Arcs on episode.ArcId equals arc.Id into arc_j
-                from arc in arc_j.DefaultIfEmpty()
-                select new QCSubmissionArcEpisode { QCSubmission = qcSubmission, Episode = episode, Arc = arc }
             ).AsQueryable();
         }
     }
