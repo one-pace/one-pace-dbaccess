@@ -86,8 +86,12 @@ namespace OnePaceDbAccess.Databases.OnePace.Models
             chapters = string.IsNullOrWhiteSpace(chapters) ? "" : "[" + chapters + "]";
             arcTitle = part.HasValue ? arcTitle + " " + part.ToString().PadLeft(2, '0') : episodeTitle;
             string hash = string.IsNullOrWhiteSpace(crc32) ? "" : "[" + crc32 + "]";
-            string res = string.IsNullOrWhiteSpace(resolution) ? "" : " [" + resolution + "]";
-            return group + chapters + " " + arcTitle + res + hash + (includeExtension ? ".mkv" : "");
+            string res = string.IsNullOrWhiteSpace(resolution) ? "" : "[" + resolution + "]";
+            return group + chapters + " " + arcTitle + " " + res + hash + (includeExtension ? ".mkv" : "");
+        }
+        public string GetName(string arcTitle, bool includeExtension)
+        {
+            return GetName(arcTitle, Title, Part, CRC32, Chapters, Resolution, includeExtension);
         }
         public void Validate()
         {
