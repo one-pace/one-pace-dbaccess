@@ -41,7 +41,11 @@ namespace OnePaceDbAccess.Databases.OnePace.Models
         {
             get
             {
-                if (Resolution == "720p")
+                if (Resolution == "1080p")
+                {
+                    return 3;
+                }
+                else if (Resolution == "720p")
                 {
                     return 2;
                 }
