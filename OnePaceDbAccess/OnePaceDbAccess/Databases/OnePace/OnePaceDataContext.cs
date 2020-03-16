@@ -16,6 +16,11 @@ namespace OnePaceDbAccess.Databases.OnePace
 
         }
 
+        public OnePaceDataContext(string nameOrConnectionString) : base(nameOrConnectionString)
+        {
+
+        }
+
         public IQueryable<ArcEpisodes> FetchArcsWithEpisodes()
         {
             var list = new List<Arc>();
