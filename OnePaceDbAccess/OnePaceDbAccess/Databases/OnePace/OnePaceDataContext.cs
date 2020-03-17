@@ -5,6 +5,7 @@ using System.Linq;
 
 namespace OnePaceDbAccess.Databases.OnePace
 {
+    [DbConfigurationType(typeof(MySql.Data.Entity.MySqlEFConfiguration))]
     public class OnePaceDataContext : DbContext
     {
         public DbSet<Saga> Sagas { get; set; }
