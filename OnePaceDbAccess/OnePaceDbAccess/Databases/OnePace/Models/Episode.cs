@@ -37,28 +37,6 @@ namespace OnePaceDbAccess.Databases.OnePace.Models
             Title = "";
         }
 
-        public int ResolutionIndex
-        {
-            get
-            {
-                if (Resolution == "1080p")
-                {
-                    return 3;
-                }
-                else if (Resolution == "720p")
-                {
-                    return 2;
-                }
-                else if (Resolution == "480p")
-                {
-                    return 1;
-                }
-                else
-                {
-                    return 0;
-                }
-            }
-        }
         public string WordPressTitle
         {
             get
