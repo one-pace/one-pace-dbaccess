@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Databases\OnePace\Enums.cs" />
     <Compile Include="Databases\OnePace\Models\Arc.cs" />
     <Compile Include="Databases\OnePace\Models\ArcEpisodes.cs" />
     <Compile Include="Databases\OnePace\Models\Episode.cs" />
